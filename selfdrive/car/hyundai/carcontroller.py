@@ -146,7 +146,7 @@ class CarController:
                                                                        self.angle_limit_counter, MAX_ANGLE_FRAMES,
                                                                        MAX_ANGLE_CONSECUTIVE_FRAMES)
 
-     apply_angle = apply_std_steer_angle_limits(actuators.steeringAngleDeg, self.apply_angle_last, CS.out.vEgoRaw, self.params)
+    apply_angle = apply_std_steer_angle_limits(actuators.steeringAngleDeg, self.apply_angle_last, CS.out.vEgoRaw, self.params)
 
     # Figure out torque value.  On Stock when LKAS is active, this is variable, but 0 when LKAS is not actively
     # steering, so because we're "tricking" ADAS into thinking LKAS is always active, we need to make sure we're
