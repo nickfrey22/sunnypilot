@@ -1795,9 +1795,11 @@ FW_VERSIONS = {
   CAR.IONIQ_6: {
     (Ecu.fwdRadar, 0x7d0, None): [
       b'\xf1\x00CE__ RDR -----      1.00 1.01 99110-KL000         ',
+      b'\xf1\x00MV__ RDR -----      1.00 1.02 99110-DO000         '
     ],
     (Ecu.fwdCamera, 0x7c4, None): [
       b'\xf1\x00CE  MFC  AT USA LHD 1.00 1.04 99211-KL000 221213',
+      b'\xf1\x00MV  MFC  AT USA LHD 1.00 1.02 99211-DO000 230616'
     ],
   },
   CAR.TUCSON_4TH_GEN: {
