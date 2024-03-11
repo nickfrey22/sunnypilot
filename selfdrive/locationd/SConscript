@@ -1,4 +1,4 @@
-Import('env', 'common', 'cereal', 'messaging', 'libkf', 'transformations')
+Import('env', 'common', 'cereal', 'messaging', 'transformations')
 
 loc_libs = [cereal, messaging, 'zmq', common, 'capnp', 'kj', 'pthread']
 
