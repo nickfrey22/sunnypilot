@@ -265,10 +265,7 @@ class CarState(CarStateBase):
       50, cp.vl["BLINKERS"][left_blinker_sig], cp.vl["BLINKERS"][right_blinker_sig])
     if self.CP.enableBsm & self.CP.carFingerprint == CAR.KIA.EV9:
       ret.leftBlindspot = cp.vl["BLINDSPOTS_REAR_CORNERS"]["FL_INDICATOR_ALT"] != 0
-      ret.rightBlindspot = cp.vl["BLINDSPOTS_REAR_CORNERS"]["FR_INDICATOR_ALT"] != 0   
-    else self.CP.enableBsm:
-      ret.leftBlindspot = cp.vl["BLINDSPOTS_REAR_CORNERS"]["FL_INDICATOR"] != 0
-      ret.rightBlindspot = cp.vl["BLINDSPOTS_REAR_CORNERS"]["FR_INDICATOR"] != 0
+      ret.rightBlindspot = cp.vl["BLINDSPOTS_REAR_CORNERS"]["FR_INDICATOR_ALT"] != 0
 
     # cruise state
     # CAN FD cars enable on main button press, set available if no TCS faults preventing engagement
