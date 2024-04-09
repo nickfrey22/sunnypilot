@@ -168,7 +168,7 @@ class CarController:
     self.apply_angle_last = apply_angle
 
     # Hold torque with induced temporary fault when cutting the actuation bit
-    torque_fault = CC.latActive and not apply_steer_req
+    torque_fault = CC.latActive #and not apply_steer_req
 
     self.apply_steer_last = apply_steer
 
@@ -233,7 +233,7 @@ class CarController:
       hda2_long = hda2 and self.CP.openpilotLongitudinalControl
 
       # steering control
-      can_sends.extend(hyundaicanfd.create_steering_messages(self.packer, self.CP, self.CAN, CC.enabled, apply_steer_req, CS.out.steeringPressed, apply_steer, apply_angle, self.lkas_max_torque, 
+      can_sends.extend(hyundaicanfd.create_steering_messages(self.packer, self.CP, self.CAN, CC.enabled, CS.out.steeringPressed, apply_steer, apply_angle, self.lkas_max_torque, 
                                                              lateral_paused, blinking_icon))
 
       # prevent LFA from activating on HDA2 by sending "no lane lines detected" to ADAS ECU
@@ -270,7 +270,7 @@ class CarController:
               if self.frame % 2 == 0:
                 can_sends.append(hyundaicanfd.create_buttons(self.packer, self.CP, self.CAN, ((self.frame // 2) + 1) % 0x10, self.cruise_button))
     else:
-      can_sends.append(hyundaican.create_lkas11(self.packer, self.frame, self.car_fingerprint, apply_steer, apply_steer_req,
+      can_sends.append(hyundaican.create_lkas11(self.packer, self.frame, self.car_fingerprint, apply_steer,
                                                 torque_fault, CS.lkas11, sys_warning, sys_state, CC.enabled,
                                                 hud_control.leftLaneVisible, hud_control.rightLaneVisible,
                                                 left_lane_warning, right_lane_warning,
